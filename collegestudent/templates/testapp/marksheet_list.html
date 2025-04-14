@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        th,td{
+            text-align: center;
+        }
+        body{
+            background-color:lightblue;
+        }
+    </style>
+    
+</head>
+<body>
+    <center>
+        <h1>List of all student</h1><hr>
+        {% if marksheet_list %}
+        <table border="2px">
+            <thead>
+                <th>Inrollment_no</th>
+                <th>Name</th>
+                <th>Course</th>
+                <th>Semester</th>
+                <th>Status</th>
+                <th>Actions</th>
+            </thead>
+            {% for s in marksheet_list %}
+            <tr>
+                <td>{{s.Inrollment_no}}</td>
+                <td>{{s.student_name}}</td>
+                <td>{{s.Course}}</td>
+                <td>{{s.Semester}}</td>
+                <td>{{s.status}}</td>
+                <td>
+                    <a href="/mdetail/{{s.id}}" class="btn btn-primary">Views</a>|
+                    <a href="/mupdate/{{s.id}}" class="btn btn-warning">Edit</a>|
+                    <a href="/mdelete/{{s.id}}" class="btn btn-danger">Delete</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No Records here !!!</p>
+        {% endif %}
+        <br>
+        <a href="/mform" class="btn btn-primary">Generate Marksheet</a>&emsp;
+        <a href="/index" class="btn btn-dark">Back</a>
+    </center>
+</body>
+</html>

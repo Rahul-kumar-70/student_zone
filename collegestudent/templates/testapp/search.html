@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Search Marksheet</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+</head>
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        background-color: yellowgreen;
+    }
+    div{
+        margin-top: 20px;
+        box-shadow: 2px 2px 2px 2px red;
+        background-color: aqua;
+        padding: 15px;
+    }
+</style>
+<body>
+    <center>
+        <div>
+            <h1>Search Marksheet</h1><hr>
+        <form method="get">
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary">Search</button>&emsp;
+            <a href="/" class="btn btn-dark">Back</a>
+        </form>
+        {% if not_found %}
+            <p style="color: red;">Marksheet not found for this enrollment number.</p>
+        {% endif %}
+        </div>
+    </center>
+</body>
+</html>

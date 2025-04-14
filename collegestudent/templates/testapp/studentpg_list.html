@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List of All PG Students</title>
+    <link rel="icon" href="{% static 'image/logo1.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+        body{
+            background-color: aqua;
+        }
+    table{
+        text-align: center;
+    }
+    th{
+        padding: 10px;
+    }
+    </style>
+</head>
+<body>
+    <center>
+        <h1>List of All PG Students</h1><hr>
+        {% if studentpg_list %}
+        <table border="2">
+            <thead>
+                    <th>Name</th>
+                    <th>Enrollment No</th>
+                    <th>Mobile</th>
+                    <th>course</th>
+                    <th>Semester</th>
+                    <th>Gender</th>
+                    <th>Photo</th>
+                    <th>Actions</th>
+            </thead>
+                {% for s in studentpg_list %}
+                <tr>
+                    <td>{{ s.name }}</td>
+                    <td>{{ s.Inrollment_no }}</td>
+                    <td>{{ s.Mobile }}</td>
+                    <td>{{ s.course }}</td>
+                    <td>{{ s.Semester }}</td>
+                    <td>{{ s.Gender }}</td>
+                    <td>
+                        {% if s.photo %}
+                            <img src="{{ s.photo.url }}" alt="Student Photo" width="100">
+                        {% else %}
+                            <span>No Photo</span>
+                        {% endif %}
+                    </td>
+                    <td>
+                        <a href="/{{s.id}}" class="btn btn-primary">View</a> | 
+                        <a href="/update/{{s.id}}" class="btn btn-warning">Edit</a> | 
+                        <a href="/delete/{{s.id}}" class="btn btn-danger">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+        </table>
+        {% else %}
+        <h2>No Records Found!</h2>
+        {% endif %}<br>
+        <a href="/index" class="btn btn-dark">Back</a>
+    </center>
+</body>
+</html>

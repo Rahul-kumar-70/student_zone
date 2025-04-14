@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete</title>
+    <link rel="icon" href="{% static 'image/logo1.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        div{
+            width: 700px;
+            box-shadow: 2px 2px 2px 2px red;
+            margin-top: 50px;
+            padding: 30px;
+        }
+        body {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+        url("{% static 'image\igntu_rcm2.png' %}"); 
+        background-size: cover;  
+        background-position: center; 
+        background-repeat: no-repeat; 
+        height: 100vh; 
+    }
+    </style>
+
+</head>
+<body>
+    <center>
+        <div>
+            <h1>Do you really Want to Delete ?</h1>
+        <form method="post">
+            {% csrf_token %}
+            <input type="submit" value="Delete" class="btn btn-danger">
+            <a href="/list" class="btn btn-dark">Cancel</a>
+        </form>
+        </div>
+    </center>
+</body>
+</html>

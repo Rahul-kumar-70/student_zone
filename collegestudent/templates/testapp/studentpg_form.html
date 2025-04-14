@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<style>
+    body{
+        background-color: yellow;
+        padding: 20px;
+
+    }
+    div{
+        box-shadow: 2px 2px 2px 2px red; 
+        width:800px; 
+        padding: 10px; 
+        background-color: aqua;
+    }
+</style>
+</head>
+<body>
+    <center>
+        <div>
+            <h1>Registration Form PG</h1><hr>
+            <form method="post" enctype="multipart/form-data">
+                {{form.as_p}}
+                {% csrf_token %}
+                <input type="submit" value="Submit" class="btn btn-success">&emsp;<a href="/index" class="btn btn-dark">Back</a>
+            </form>
+        </div>
+    </center>
+</body>
+</html>

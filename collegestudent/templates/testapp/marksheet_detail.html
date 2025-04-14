@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <style>
+     body{
+        display: flex;
+        justify-content: center;
+        background-color: greenyellow;
+     }
+     div{
+        box-shadow: 2px 2px 2px 2px lightgreen;
+        background-color: aquamarine;
+        padding: 30px;
+     }
+     a{
+        text-decoration: none;
+     }
+    </style>
+</head>
+<body>
+    <div>
+        <h1> Marksheet of {{marksheet.student_name |title }}</h1><hr> 
+        <p>Inrollment_no : {{marksheet.Inrollment_no}}</p>
+        <p>Course : {{marksheet.Course}}</p>
+        <p>Gender : {{marksheet.Gender}}</p>
+        <p>Semester : {{marksheet.Semester}}</p>
+        <p>Subject_1 : {{marksheet.Subject_1}}</p>
+        <p>Subject_2 : {{marksheet.Subject_2}}</p>
+        <p>Subject_3 : {{marksheet.Subject_3}} </p>
+        <p>Subject_4 : {{marksheet.Subject_4}}</p>
+        <p>Subject_5 : {{marksheet.Subject_5}}</p>
+        <p>Total_Marks : {{marksheet.Total_Marks}}</p>
+        <p>Total_Obtained : {{marksheet.Total_Obtained}}</p>
+        <p>Percentage : {{marksheet.Percentage}}</p>
+        <h3>Status : {{marksheet.status}}</h3>
+        <a href="/mlist">Back</a>
+    </div>
+    
+</body>
+</html>
+

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+{% extends 'testapp/base.html' %}
+{% block body_block %}
+<center>
+    <div style="box-shadow: 2px 2px 2px 2px black; width: 300px; padding: 20px; background-color: aqua;">
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" value="Login" class="btn btn-success"> &emsp;<a href="/signup">New account</a>
+        </form>
+    </div>
+</center>
+{% endblock %}

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igntu_Rcm</title>
+    <link rel="icon" href="{% static 'image/logo1.ico' %}" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" 
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+   <style>
+    body{
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+        url("{% static 'image\igntu_image2.png' %}"); 
+        background-size: cover;  
+        background-position: center; 
+        background-repeat: no-repeat; 
+        height: 100vh; 
+    }
+    ul{
+        list-style: none;   
+        display: flex;
+        margin-left: 100px;
+        margin-top: 10px;
+    }
+    li{
+        padding: 10px;
+    }
+    
+   </style>
+</head>
+<body>
+    <center>
+        <div>
+            <ul>
+                <li><a href="/" class="btn btn-primary">Home</a></li>
+                <li><a href="/form" class="btn btn-primary">Admission PG</a></li>
+                <li><a href="/formphd" class="btn btn-primary">Admission PHD</a></li>
+                <li><a href="/list" class="btn btn-primary">PG Student</a></li>
+                <li><a href="/listphd" class="btn btn-primary">PHD Student</a></li>
+                <li><a href="/mform" class="btn btn-primary">Marksheet Generate</a></li>
+                <li><a href="/mlist" class="btn btn-primary">Marksheet List </a></li>
+                <li class="l1"><a href="/signup" class="btn btn-primary">Register</a></li>
+                <li><a href="/logout" class="btn btn-primary">logout</a></li>
+            </ul>
+        </div>
+    </center>
+    {% block body_block %}
+    {% endblock %}
+</body>
+</html>

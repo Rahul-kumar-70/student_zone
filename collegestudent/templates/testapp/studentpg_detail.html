@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail</title>
+    <link rel="icon" href="{% static 'image/logo1.ico' %}" type="image/x-icon">
+    <style>
+        body {
+        background: linear-gradient(rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0.5)), 
+        url("{% static 'image\igntu_rcm3.png' %}"); 
+        background-size: cover;  
+        background-position: center; 
+        background-repeat: no-repeat; 
+        height: 100vh; 
+    }
+    a{
+        text-decoration: none;
+    }
+    </style>
+</head>
+<body>
+    <div style="background-color: aquamarine; box-shadow: 2px 2px 2px 2px red;width: 400px; padding: 20px; margin-left: 400px;">
+        <h1>{{studentpg.name | upper}}</h1><hr>
+        {% if studentpg.photo %}
+            <img src="{{ studentpg.photo.url }}" alt="Student Photo" width="120" height="150px">
+        {% else %}
+            <p>No photo available.</p>
+        {% endif %}
+        <p><strong>Inrollment_no: </strong>{{studentpg.Inrollment_no}}</p>
+        <p><strong>AdharCard: </strong>{{studentpg.AdharCard}}</p>
+        <p><strong>Mobile_no: </strong>{{studentpg.Mobile}}</p>
+        <p><strong>Address: </strong>{{studentpg.Address}}</p>
+        <p><strong>course: </strong>{{studentpg.course}}</p>
+        <p><strong>Gender: </strong>{{studentpg.Gender}}</p>
+        <p><strong>Semester: </strong>{{studentpg.Semester}}</p>
+        <p><strong>Fee: </strong>{{studentpg.Fee}}</p>
+        {% if studentpg.signature %}
+        <p><strong>signature: </strong></p>
+            <img src="{{ studentpg.signature.url }}" alt="Student signature" width="120" height="50px">
+        {% else %}
+            <p>No signature available.</p>
+        {% endif %}
+        <br><br>
+        <a href="/list" >Back</a>
+    </div>
+</body>
+</html>
