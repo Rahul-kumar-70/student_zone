@@ -39,5 +39,40 @@
 ### 🧑‍💻 Clone the Project
 
 ```bash
-git clone https://github.com/yourusername/studentzone.git
+git clone https://github.com/Rahul-kumar-70/student_zone.git
 cd studentzone
+
+### Create a Virtual Environment
+ python -m venv env
+env\Scripts\activate
+
+### Install Required Packages
+ pip install -r requirements.txt
+ pip freeze > requirements.txt
+
+###Configure Database
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'collegestudent',
+        'USER': 'root',
+        'PASSWORD': 'root',
+    }
+}
+
+### Run Migrations
+python manage.py makemigrations
+python manage.py migrate
+
+### Create Superuser (Admin Login)
+python manage.py createsuperuser
+
+###Run the Server
+python manage.py runserver
+
+###Then open your browser and visit:
+http://127.0.0.1:8000/
+
+###Test Credentials (if you have demo users)
+Username: RahulKumar
+Password: Rahul@123
